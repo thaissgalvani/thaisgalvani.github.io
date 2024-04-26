@@ -12,35 +12,71 @@ function toggleClass(element) {
 body {
   background-color:#E7E9EB;
 }
+
 #myDIV {
-  height:auto;
-  grid-template-columns: auto auto;
-  grid-auto-flow: row dense;
-  display: grid;
-  gap: 12px;
-  background-color: #2196F3;
-  padding: 12px;
+	  height:auto;
+	  grid-template-columns: auto auto auto auto;
+	grid-template-rows: auto auto;
+	  grid-auto-flow: dense;
+	  display: grid;
+	  gap: 12px;
+	  background-color: #2196F3;
+	  padding: 12px;
+	}
+		
+	.card {
+	  background-color: rgba(255, 255, 255, 0.8);
+	  text-align: center;
+	  padding: 20px 0;
+	  font-size: 30px;
+	  cursor: pointer; 
+	}
+	
+	.card p {
+	display: none;
+	}
+		
+	.clicked {grid-column: auto / span 2;
+	transition: all 1s ease;
+	}
+	
+	.clicked p {
+	display:block;
+	}
+
+@media only screen and (max-width: 600px) {
+	#myDIV {
+	  height:auto;
+	  grid-template-columns: auto auto;
+	  grid-auto-flow: row dense;
+	  display: grid;
+	  gap: 12px;
+	  background-color: #2196F3;
+	  padding: 12px;
+	}
+		
+	.card {
+	  background-color: rgba(255, 255, 255, 0.8);
+	  text-align: center;
+	  padding: 20px 0;
+	  font-size: 30px;
+	  cursor: pointer; 
+	}
+	
+	.card p {
+	display: none;
+	}
+		
+	.clicked {grid-column: auto / span 2;
+	transition: all 1s ease;
+	}
+	
+	.clicked p {
+	display:block;
+	}
+	
 }
 	
-.card {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-  cursor: pointer; 
-}
-
-.card p {
-display: none;
-}
-	
-.clicked {grid-column: auto / span 2;
-transition: all 1s ease;
-}
-
-.clicked p {
-display:block;
-}
 	
 </style>
 </head>
