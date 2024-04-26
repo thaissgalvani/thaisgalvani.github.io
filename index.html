@@ -41,6 +41,7 @@ background-color: #c56fd8;
 }
 
 @media only screen and (max-width: 600px) {
+
 	.grid-container {
   display: grid;
   grid-template-columns: auto auto;
@@ -48,6 +49,12 @@ background-color: #c56fd8;
   background-color: #2196F3;
   padding: 10px;
 	}
+
+	.active {
+  grid-row: 2 / 1;
+background-color: #c56fd8;
+}
+	
 }
 	
 </style>
@@ -61,7 +68,7 @@ background-color: #c56fd8;
 
 <div class="grid-container">
 
-  <div class="card item1"">
+  <div class="card item1">
     <h2> lorem iosum 1 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
 	<input type="button" id="btn" value="Add Class"/>
