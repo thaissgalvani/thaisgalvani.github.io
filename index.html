@@ -7,8 +7,8 @@
 	
  <script>
         $(document).ready(function () {
-            $("#btn").on('click', function () {
-               $(this).parent().toggleClass("active");
+            $(".btn").on('click', function () {
+               $(this).closest().toggleClass("active");
             });
         });
     </script>
@@ -71,37 +71,39 @@ background-color: #c56fd8;
   <div class="card item1">
     <h2> lorem iosum 1 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
-	<input type="button" id="btn" value="Add Class"/>
+	<input type="button" class="btn" value="Add Class"/>
   </div>
+	
   <div class="card item2">
     <h2> lorem iosum 2 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
-	<input type="button" id="btn" value="Add Class"/>
+	<input type="button" class="btn" value="Add Class"/>
   </div>
+	
   <div class="card item3">
     <h2> lorem iosum 3 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
-	<input type="button" id="btn" value="Add Class"/>
+	<input type="button" class="btn" value="Add Class"/>
   </div>  
   <div class="card item4">
     <h2> lorem iosum 4 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
-	<input type="button" id="btn" value="Add Class"/>
+	<input type="button" class="btn" value="Add Class"/>
   </div>
   <div class="card item5">
     <h2> lorem iosum 5 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
-	<input type="button" id="btn" value="Add Class"/>
+	<input type="button" class="btn" value="Add Class"/>
   </div>
   <div class="card item6">
     <h2> lorem iosum 6 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
-	<input type="button" id="btn" value="Add Class"/>
+	<input type="button" class="btn" value="Add Class"/>
   </div>
   <div class="card item7">
     <h2> lorem iosum 7 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
-	<input type="button" id="btn" value="Add Class"/>
+	<input type="button" class="btn" value="Add Class"/>
   </div> 
 
 </div>
