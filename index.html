@@ -53,9 +53,49 @@
   .button:hover {
     background-color: rgba(33, 33, 33, 0.60); /* Cor de fundo com transparência */
   }
+
+  .grid-container {
+  display: grid;
+  grid-template-areas:
+    'card-grid'
+    'card-grid card-grid'
+    'card-grid card-grid';
+  gap: 12px;
+  background-color: #2196F3;
+  padding: 10px;
+  }
+  
 </style>
 </head>
 <body>
+
+<div class="grid-container">
+  <div class="card-grid"> 
+  <h3> title 1 </h3>
+  <p> lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
+  </div>
+  <div class="card-grid"> 
+  <h3> title 2 </h3>
+  <p> lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
+  </div>
+  <div class="card-grid"> 
+  <h3> title 3 </h3>
+  <p> lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
+  </div>
+  <div class="card-grid"> 
+  <h3> title 4 </h3>
+  <p> lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
+  </div>
+  <div class="card-grid"> 
+  <h3> title 5 </h3>
+  <p> lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
+  </div>
+  <div class="card-grid"> 
+  <h3> title 6 </h3>
+  <p> lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
+  </div>
+
+</div>
   
 <div class="container">
 <img class="background-image" src="https://conteudo.imguol.com.br/c/entretenimento/b6/2022/08/19/mulher-andando-de-bicicleta-1660922792960_v2_1x1.jpg" alt="Imagem de fundo">
