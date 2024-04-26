@@ -21,6 +21,10 @@ body {
   background-color: #2196F3;
   padding: 12px;
 }
+
+#myDIV div p {
+display: none;
+}
 	
 #myDIV div {
   background-color: rgba(255, 255, 255, 0.8);
@@ -32,18 +36,10 @@ body {
 	
 .clicked {grid-column: auto / span 2;
 transition: all 1s ease;
-animation: expand 1s ease forwards;
- }
+}
 
-@keyframes expand {
-  from {
-    width: auto;
-    height: auto;
-  }
-  to {
-    width: 100%;
-    height: 100%;
-  }
+.clicked p {
+display:block;
 }
 	
 </style>
@@ -53,14 +49,23 @@ animation: expand 1s ease forwards;
 <h1>The grid-auto-flow property</h1>
 
 <div id="myDIV">
-  <div class="item1" onclick="toggleClass(this)">1</div>
-  <div class="item2" onclick="toggleClass(this)">2</div>
-  <div class="item3" onclick="toggleClass(this)">3</div>
-  <div class="item4" onclick="toggleClass(this)">4</div>
-  <div class="item5" onclick="toggleClass(this)">5</div>
-  <div class="item6" onclick="toggleClass(this)">6</div>
-  <div class="item7" onclick="toggleClass(this)">7</div>
-  <div class="item8" onclick="toggleClass(this)">8</div>
+  <div class="item1" onclick="toggleClass(this)">1
+  <p> lorem ipsum dolor sit amet </p>
+  </div>
+  <div class="item2" onclick="toggleClass(this)">2
+  <p> lorem ipsum dolor sit amet </p></div>
+  <div class="item3" onclick="toggleClass(this)">3
+  <p> lorem ipsum dolor sit amet </p></div>
+  <div class="item4" onclick="toggleClass(this)">4
+  <p> lorem ipsum dolor sit amet </p></div>
+  <div class="item5" onclick="toggleClass(this)">5
+  <p> lorem ipsum dolor sit amet </p></div>
+  <div class="item6" onclick="toggleClass(this)">6
+  <p> lorem ipsum dolor sit amet </p></div>
+  <div class="item7" onclick="toggleClass(this)">7
+  <p> lorem ipsum dolor sit amet </p></div>
+  <div class="item8" onclick="toggleClass(this)">8
+  <p> lorem ipsum dolor sit amet </p></div>
 </div>
 
 </body>
