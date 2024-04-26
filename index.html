@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-
-@media only screen and (max-width: 600px) {
-
-	.grid-container {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
-	}
+<script>
+function myFunction() {
+  var x = document.getElementByClass("card");
+  if (x.style === "") {
+    x.style = "active";
+  } else {
+    x.style = "";
+  }
 }
+</script>
+	
+<style>
+	
 
 .grid-container {
   display: grid;
@@ -36,6 +37,17 @@
 .active {
   grid-row: 1 / 3;
 }
+
+@media only screen and (max-width: 600px) {
+	.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+	}
+}
+	
 </style>
 </head>
 <body>
@@ -46,31 +58,31 @@
 <p>Item1 will start on row-line 1 and end on row-line 4:</p>
 
 <div class="grid-container">
-  <div class="item1">
+  <div class="card item1">
     <h2> lorem iosum 1 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
   </div>
-  <div class="item2 active">
+  <div class="card item2">
     <h2> lorem iosum 2 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
   </div>
-  <div class="item3">
+  <div class="card item3">
     <h2> lorem iosum 3 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
   </div>  
-  <div class="item4">
+  <div class="card item4">
     <h2> lorem iosum 4 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
   </div>
-  <div class="item5">
+  <div class="card item5">
     <h2> lorem iosum 5 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
   </div>
-  <div class="item6">
+  <div class="card item6">
     <h2> lorem iosum 6 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
   </div>
-  <div class="item7">
+  <div class="card item7">
     <h2> lorem iosum 7 </h2>
     <p> lorem ipsum dolor sit amet consectetur </p>
   </div> 
