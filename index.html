@@ -28,15 +28,16 @@ body {
   padding: 20px 0;
   font-size: 30px;
   cursor: pointer; 
-  transition: all 1s ease;
-  animation: expand 1s ease forwards;
 }
 	
-.clicked {grid-column: auto / span 2;}
+.clicked {grid-column: auto / span 2;
+transition: all 1s ease;
+animation: expand 1s ease forwards;
+ }
 
 @keyframes expand {
   from {
-    width: 50%;
+    width: auto;
     height: auto;
   }
   to {
