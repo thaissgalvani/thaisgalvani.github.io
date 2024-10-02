@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Restrita</title>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
-</head>
-<body>
-    <h1 id="welcome">hello</h1>
-    <button id="logoutBtn" style="display: none;" onclick="logout()">Sair</button>
-
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    
+<script src="https://cdn.auth0.com/js/auth0-spa-js/1.19/auth0-spa-js.production.js"></script>
     
     <script>
         const auth0 = new Auth0Client ({
@@ -47,5 +42,14 @@
             }
         };
     </script>
+
+
+    
+</head>
+<body>
+    <h1 id="welcome">hello</h1>
+    <button id="logoutBtn" style="display: none;" onclick="logout()">Sair</button>
+
+    
 </body>
 </html>
