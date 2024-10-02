@@ -6,14 +6,15 @@
     <title>Página Restrita</title>
 </head>
 <body>
-    <h1 id="welcome"> Hellooo</h1>
+    <h1 id="welcome">Carregando...</h1>
+    <button id="logoutBtn" style="display: none;" onclick="logout()">Sair</button>
 
     <script src="https://cdn.auth0.com/js/auth0/9.13/auth0.min.js"></script>
     <script>
         const auth0 = new Auth0Client({
-            domain: 'dev-zgzdssuejv8valwt.us.auth0.com',
-            client_id: 'weJF0eLhBwiw9whoJBYnTOn7jLIfT95L',
-            redirect_uri: window.location.origin + '/pagina-restrita'
+            domain: 'dev-zgzdssuejv8valwt.us.auth0.com', // Substitua pelo seu domínio Auth0
+            client_id: 'weJF0eLhBwiw9whoJBYnTOn7jLIfT95L', // Substitua pelo seu Client ID
+            redirect_uri: window.location.origin + '/pagina-restrita' // URL onde redirecionar após login
         });
 
         async function login() {
@@ -27,12 +28,20 @@
         }
 
         window.onload = async () => {
+            const query = window.location.search;
+            if (query.includes("code=") && query.includes("state=")) {
+                await auth0.handleRedirectCallback();
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+
             const isAuthenticated = await auth0.isAuthenticated();
-            if (!isAuthenticated) {
-                login();
-            } else {
+            if (isAuthenticated) {
                 const user = await auth0.getUser();
                 document.getElementById('welcome').innerText = `Bem-vindo, ${user.name}`;
+                document.getElementById('logoutBtn').style.display = 'block';
+            } else {
+                // Redireciona para a página de login se não estiver autenticado
+                window.location.href = "dev-zgzdssuejv8valwt.us.auth0.com/authorize?client_id=weJF0eLhBwiw9whoJBYnTOn7jLIfT95L&response_type=token&redirect_uri=" + encodeURIComponent(window.location.origin + '/pagina-restrita'); 
             }
         };
     </script>
