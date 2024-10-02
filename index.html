@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -10,44 +10,32 @@
     <button onclick="logout()">Sair</button>
 
     <script src="https://cdn.auth0.com/js/auth0/9.13/auth0.min.js"></script>
-
-  <script>
-    const auth0 = new Auth0Client({
-        domain: 'dev-zgzdssuejv8valwt.us.auth0.com',
-        client_id: 'weJF0eLhBwiw9whoJBYnTOn7jLIfT95L',
-        redirect_uri: window.location.origin
-    });
-
-    // Função para fazer login
-    async function login() {
-        await auth0.loginWithRedirect();
-    }
-
-    // Função para fazer logout
-    async function logout() {
-        auth0.logout({
-            returnTo: window.location.origin
+    <script>
+        const auth0 = new Auth0Client({
+            domain: 'dev-zgzdssuejv8valwt.us.auth0.com',
+            client_id: 'weJF0eLhBwiw9whoJBYnTOn7jLIfT95L',
+            redirect_uri: window.location.origin
         });
-    }
 
-    // Função para verificar o login
-    async function checkSession() {
-        const isAuthenticated = await auth0.isAuthenticated();
-        if (isAuthenticated) {
-            // Usuário autenticado
-            const user = await auth0.getUser();
-            document.getElementById('welcome').innerText = `Bem-vindo, ${user.name}`;
-        } else {
-            // Usuário não autenticado
-            login(); // Redireciona para a página de login
+        async function login() {
+            await auth0.loginWithRedirect();
         }
-    }
 
-    // Verificar a sessão ao carregar a página
-    window.onload = checkSession;
+        async function logout() {
+            auth0.logout({
+                returnTo: window.location.origin
+            });
+        }
 
-      
+        window.onload = async () => {
+            const isAuthenticated = await auth0.isAuthenticated();
+            if (!isAuthenticated) {
+                login();
+            } else {
+                const user = await auth0.getUser();
+                document.getElementById('welcome').innerText = `Bem-vindo, ${user.name}`;
+            }
+        };
     </script>
 </body>
-</html>
 </html>
